@@ -11,7 +11,7 @@ N = 100
 I = 1
 S = 100 - I
 alpha = 0.5
-MAX_TIME = 100
+MAX_TIME = 20
 
 susceptible = []
 infected = []
