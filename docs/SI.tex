@@ -9,9 +9,23 @@
 	\maketitle
 	
 	\section{Model}
+	The SI (Susceptible-Infected) model  is a discrete-time, deterministic model.
 	
 	\[ \frac{dS}{dt}=-\frac{\alpha}{N}SI \]
 	\[ \frac{dI}{dt}=\frac{\alpha}{N}SI \]
+	
+	\subsection{Parameters}
+	
+	\begin{itemize}
+		\item $\alpha$: the contact rate, i.e. the average number of individuals successfully infected
+	\end{itemize}
+	
+	$SI$ is the number of potential contacts with an infected individual. Then $\frac{\alpha}{N}SI$ is the average number of successful infections per population times the number of potentially successful contacts.
+	
+	\subsection{Initial Conditions}
+	
+	\[ S_0 + I_0 = N \]
+	\[ S_0 > 0, I_0 > 0 \]
 	
 	\section{Stability Analysis}
 	
@@ -22,21 +36,49 @@
 	The equilibria / fixed points are when $ \frac{dI}{dt}=0 $.
 	\[ I^*=0, I^*=N \]
 	
+	Corresponding to $ S^*=N $ and $ S^*=0 $, respectively.
+	
+	This gives two $ (S,I) $ pairs: the DFE pair $ (N,0) $ and the endemic equilbrium pair $ (0,N) $.
+	
+	The Jacobian for $ x=\dfrac{dS}{dt} $ and $ y=\dfrac{dI}{dt} $ is
+	
+	\[
+	J =
+	\begin{vmatrix}
+		\dfrac{\partial x}{\partial S} & \dfrac{\partial x}{\partial I} \\[6pt]
+		\dfrac{\partial y}{\partial S} & \dfrac{\partial y}{\partial I}
+	\end{vmatrix} =
+	\begin{vmatrix}
+		-\frac{\alpha}{N}I & -\frac{\alpha}{N}S \\[6pt]
+		\frac{\alpha}{N}I & \frac{\alpha}{N}S
+	\end{vmatrix} 
+	\]
+	
 	\subsection{Disease-Free Equilibrium (DFE)}
 	
 	DFE: $ (S,I)=(N,0) $
 	
-	Calculate the Jacobian.
-	
-	$\begin{vmatrix}
+	Evaluate the Jacobian.
+	\[
+	J =
+	\begin{vmatrix}
 		0 & -\alpha \\
 		0 & \alpha
-	\end{vmatrix}$
+	\end{vmatrix}
+	\]
 	
 	\subsection{Endemic Equilibrium}
 	
 	Endemic equilibrium: $ (S,I)=(0,N) $
 	
+	Evaluate the Jacobian.
+	\[
+	J =
+	\begin{vmatrix}
+		-\alpha & 0 \\
+		\alpha & 0
+	\end{vmatrix}
+	\]
 	
 	
 \end{document}
