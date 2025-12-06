@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\usepackage{amsmath}
+
 \title{SI Model Stability}
 \author{Charlotte Maryjean White}
 
@@ -8,5 +10,33 @@
 	
 	\section{Model}
 	
+	\[ \frac{dS}{dt}=-\frac{\alpha}{N}SI \]
+	\[ \frac{dI}{dt}=\frac{\alpha}{N}SI \]
+	
 	\section{Stability Analysis}
+	
+	Reduce to one equation. Since $ S=N-I $:
+	
+	\[ \frac{dI}{dt}=\frac{\alpha}{N}(N-I)I \]
+	
+	The equilibria / fixed points are when $ \frac{dI}{dt}=0 $.
+	\[ I^*=0, I^*=N \]
+	
+	\subsection{Disease-Free Equilibrium (DFE)}
+	
+	DFE: $ (S,I)=(N,0) $
+	
+	Calculate the Jacobian.
+	
+	$\begin{vmatrix}
+		0 & -\alpha \\
+		0 & \alpha
+	\end{vmatrix}$
+	
+	\subsection{Endemic Equilibrium}
+	
+	Endemic equilibrium: $ (S,I)=(0,N) $
+	
+	
+	
 \end{document}
