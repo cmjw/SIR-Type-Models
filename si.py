@@ -27,8 +27,8 @@ def simulate(S, I, N):
 simulate(S, I, N);
 
 figure = plt.figure();
-infected_line,    = plt.plot(infected, label='I(t)');
 susceptible_line, = plt.plot(susceptible, label='S(t)');
+infected_line,    = plt.plot(infected, label='I(t)');
 plt.legend(handles=[infected_line, susceptible_line]);
 
 plt.show();
