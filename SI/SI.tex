@@ -27,6 +27,13 @@
 	\[ S_0 + I_0 = N \]
 	\[ S_0 > 0, I_0 > 0 \]
 	
+	\subsection{Assumptions}
+	
+	\begin{enumerate}
+		\item The total population size, $ N $, remains constant: $ N = S_n + I_n $.
+		\item Each individual is equally likely to contract the disease.
+	\end{enumerate}
+	
 	\section{Stability Analysis}
 	
 	Reduce to one equation. Since $ S=N-I $:
@@ -51,7 +58,11 @@
 	\begin{vmatrix}
 		-\frac{\alpha}{N}I & -\frac{\alpha}{N}S \\[6pt]
 		\frac{\alpha}{N}I & \frac{\alpha}{N}S
-	\end{vmatrix} 
+	\end{vmatrix} = \frac{\alpha}{N}
+	\begin{vmatrix}
+		-I & -S \\
+		I & S
+	\end{vmatrix}
 	\]
 	
 	\subsection{Disease-Free Equilibrium (DFE)}
@@ -67,6 +78,30 @@
 	\end{vmatrix}
 	\]
 	
+	Evaluate the characteristic polynomial:
+	\[
+	J - \lambda I =
+	\begin{vmatrix}
+		0 & -\alpha \\
+		0 & \alpha
+	\end{vmatrix} -
+	\begin{vmatrix}
+		\lambda & 0 \\
+		0 & \lambda
+	\end{vmatrix} = 
+	\begin{vmatrix}
+		-\lambda & -\alpha \\
+		0 & \alpha - \lambda
+	\end{vmatrix}
+	\]
+	
+	Evaluate the determinant:
+	\[
+	det = -\lambda(\alpha - \lambda) - 0(-\alpha) = -\lambda(\alpha - \lambda)
+	\]
+	
+	Eigenvalues: $ \lambda_1 = 0 $, $ \lambda_2 = \alpha > 0 $
+	
 	\subsection{Endemic Equilibrium}
 	
 	Endemic equilibrium: $ (S,I)=(0,N) $
@@ -80,5 +115,29 @@
 	\end{vmatrix}
 	\]
 	
+	Evaluate the characteristic polynomial:
+	\[
+	J - \lambda I =
+	\begin{vmatrix}
+		-\alpha & 0 \\
+		\alpha & 0
+	\end{vmatrix} -
+	\begin{vmatrix}
+		\lambda & 0 \\
+		0 & \lambda
+	\end{vmatrix} = 
+	\begin{vmatrix}
+		-\alpha - \lambda & 0 \\
+		\alpha & - \lambda
+	\end{vmatrix}
+	\]
+	
+	Evaluate the determinant:
+	\[
+	det = -\lambda (-\alpha - \lambda) - 0(\alpha) =
+	\lambda (\alpha + \lambda)
+	\]
+	
+	Eigenvalues: $ \lambda_1 = 0 $, $ \lambda_2 = -\alpha < 0 $.
 	
 \end{document}
