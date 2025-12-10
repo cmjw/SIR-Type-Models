@@ -8,8 +8,25 @@
 \begin{document}
 	\maketitle
 	
+	\section{Model}
 	
+	We can begin with a simplified SIR (Susceptible-Infected-Removed) model with no births or deaths.
+	
+	\[ \dfrac{dS}{dt} = -\frac{\alpha}{N} SI \]
+	\[ \dfrac{dI}{dt} = \frac{\alpha}{N} SI - \gamma I \]
+	\[ \dfrac{dR}{dt} = \gamma I \]
+	
+	Where $\alpha$ is the contact rate, and $\gamma$ is the recovery rate. The initial conditions would be a constant population, N, and a positive, non-zero $S_0$ and $I_0$ and non-negative $R_0$.
+	
+	\[ S_0 + I_0 + R_0 = N \]
+	\[ S_i + I_i + R_i = N \]
+	\[ S_0 > 0, I_0 > 0, R_0 >= 0 \]
+	
+	In such a model with a closed population, there will be no endemic equilibrium. The disease would die out as the susceptible population is eventually depleted. Thus a more useful model to examine is the SIR model with births and deaths:
+	
+		
 	\begin{thebibliography}{00}
+		\bibitem{BrauerEtal2019} Brauer, F., Castillo-Chavez, C., Feng, Z. (2019). Introduction: A Prelude to Mathematical Epidemiology. In: Mathematical Models in Epidemiology. Texts in Applied Mathematics, vol 69. Springer, New York, NY. https://doi.org/10.1007/978-1-4939-9828-9\_1
 		\bibitem{Allen1994} Allen, L.J.S. (1994). Some discrete-time SI, SIR, and SIS epidemic models. Mathematical Biosciences 124(1), 83-105. https://doi.org/10.1016/0025-5564(94)90025-6
 		\bibitem{Strogatz2001} Strogatz, S. (2001). Nonlinear dynamics and chaos: with applications to physics, biology, chemistry and engineering. Perseus Books Group.
 	\end{thebibliography}
