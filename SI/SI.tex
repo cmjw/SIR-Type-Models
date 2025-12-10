@@ -8,7 +8,7 @@
 \begin{document}
 	\maketitle
 	
-	\section{Model}
+	\section{Simplified SI Model}
 	The SI (Susceptible-Infected) model  is a discrete-time, deterministic model.
 	
 	\[ \frac{dS}{dt}=-\frac{\alpha}{N}SI \]
@@ -22,19 +22,17 @@
 	
 	$SI$ is the number of potential contacts with an infected individual. Then $\frac{\alpha}{N}SI$ is the average number of successful infections per population times the number of potentially successful contacts.
 	
-	\subsection{Initial Conditions}
+	Initial conditions:
 	
 	\[ S_0 + I_0 = N \]
 	\[ S_0 > 0, I_0 > 0 \]
-	
-	\subsection{Assumptions}
 	
 	\begin{enumerate}
 		\item The total population size, $ N $, remains constant: $ N = S_n + I_n $.
 		\item Each individual is equally likely to contract the disease.
 	\end{enumerate}
 	
-	\section{Stability Analysis}
+	\subsection{Stability Analysis}
 	
 	Reduce to one equation. Since $ S=N-I $:
 	
